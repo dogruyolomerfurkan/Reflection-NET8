@@ -46,7 +46,7 @@ public class CSVGenerator<T>(IEnumerable<T> dataList, string fileName) where T :
 
         foreach (PropertyInfo propertyInfo in GetOrderedPropertyInfos())
         {
-            sb.Append(CSVGenerator<T>.CreateItem(propertyInfo, item)).Append(',');
+            sb.Append(CreateItem(propertyInfo, item)).Append(',');
         }
 
         return sb.ToString()[..^1];
